@@ -1,12 +1,10 @@
 package com.example.taskmgr;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 public class TaskService {
 
-    @Autowired
+    //@Autowired
     private TaskRepository taskRepository;
 
     public List<Task> findTask() {
