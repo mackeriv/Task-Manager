@@ -1,12 +1,22 @@
 package com.example.taskmgr;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
+@RestController
 public class TaskController {
 
     @Autowired
-    private TaskService taskService;
+    private TaskRepository taskRepository;
 
-    // Implement methods to handle task-related requests
+    @GetMapping("/tasks")
+    public List<Task> retrieveTasks() {
+
+        return taskRepository.findTask();
+
+    }
 
 }
