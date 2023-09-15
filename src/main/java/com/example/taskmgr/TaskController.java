@@ -9,6 +9,16 @@ public class TaskController {
     @Autowired
     private TaskRepository taskRepository;
 
+    @PostMapping("/add")
+    public String addTask(@RequestParam String title, @RequestParam String description) {
+        Task task = new Task();
+        task.setTitle(title);
+        task.setDescription(description);
+        //task.setCompleted(completed);
+        taskRepository.save(task);
+        return "New task created!";
+    }
+
     @GetMapping("/list")
     public Iterable<Task> retrieveTasks() {
         return taskRepository.findAll();
@@ -17,15 +27,6 @@ public class TaskController {
     @GetMapping("/find/{id}")
     public Task findTaskById(@PathVariable Integer id) {
         return taskRepository.findTaskById(id);
-    }
-
-    @PostMapping("/add")
-    public String addTask(@RequestParam String title, @RequestParam String description) {
-        Task task = new Task();
-        task.setTitle(title);
-        task.setDescription(description);
-        taskRepository.save(task);
-        return "New task created!";
     }
 
 }
