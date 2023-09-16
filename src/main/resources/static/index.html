@@ -1,28 +1,28 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>You first Spring application</title>
+    <title>TASK MANAGER</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 <form action="/add" method="POST">
-    <p>Let's add a customer.</p>
+    <p>Create your task here.</p>
 
     <div>
-        <label for="firstName">First name:</label>
-        <input name="first" id="firstName" value="Homer">
+        <label for="title">First name:</label>
+        <input name="title" id="title" value="Clean room">
     </div>
     <div>
-        <label for="lastName">Last name:</label>
-        <input name="last" id="lastName" value="Simpson">
+        <label for="description">Last name:</label>
+        <input name="description" id="description" value="Gotta clean my room.">
     </div>
     <div>
-        <button>Add customer</button>
+        <button>Add task</button>
     </div>
 </form>
 
 <form action="/list" method="GET">
-    <button>List customers</button>
+    <button>List tasks</button>
 </form>
 </body>
 </html>
