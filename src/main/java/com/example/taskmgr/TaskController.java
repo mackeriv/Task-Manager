@@ -10,11 +10,11 @@ public class TaskController {
     private TaskRepository taskRepository;
 
     @PostMapping("/add")
-    public String addTask(@RequestParam String title, @RequestParam String description) {
+    public String addTask(@RequestParam String title, @RequestParam String description, @RequestParam Boolean completed) {
         Task task = new Task();
         task.setTitle(title);
         task.setDescription(description);
-        //task.setCompleted(completed);
+        task.setCompleted(completed);
         taskRepository.save(task);
         return "New task created!";
     }

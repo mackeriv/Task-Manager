@@ -24,6 +24,7 @@ public class Task {
 
     public Task() {
         // Default constructor
+
     }
 
     public int getId() { return id; }
