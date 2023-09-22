@@ -1,4 +1,4 @@
-package com.example.taskmgr;
+package Task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +10,9 @@ public class TaskController {
     private TaskRepository taskRepository;
 
     @PostMapping("/add")
-    public String addTask(@RequestParam String title, @RequestParam String description, @RequestParam Boolean completed) {
+    public String addTask(@RequestParam String title, @RequestParam String description, @RequestParam (defaultValue = "false") boolean completed) {
         Task task = new Task();
+
         task.setTitle(title);
         task.setDescription(description);
         task.setCompleted(completed);

@@ -1,4 +1,4 @@
-package com.example.taskmgr;
+package User;
 
 public class User {
 
