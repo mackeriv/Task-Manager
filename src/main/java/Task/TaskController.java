@@ -30,4 +30,10 @@ public class TaskController {
         return taskRepository.findTaskById(id);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public String deleteTaskById(@PathVariable Integer id) {
+        taskRepository.deleteById(id);
+        return "Task successfully deleted.";
+    }
+
 }
