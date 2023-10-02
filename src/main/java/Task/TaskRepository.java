@@ -6,7 +6,5 @@ import org.springframework.stereotype.Repository;
 public interface TaskRepository extends CrudRepository<Task, Integer> {
 
     Task findTaskById(Integer id);
-    Task deleteTaskById(Integer id);
-
 
 }
